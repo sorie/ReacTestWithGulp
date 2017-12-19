@@ -1,0 +1,11 @@
+* { margin: 0; padding: 0; font-family: "Malgun Gothic",sans-serif; }
+
+a, span { display: inline-block; }
+
+html, body, #app { width: 100%; height: 100%; position: relative; overflow: hidden; background: #efefef; }
+
+.List { width: 300px; margin: auto; height: 480px; position: absolute; left: 0; top: 0; bottom: 0; right: 0; }
+
+.Item { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); position: absolute; margin-bottom: 10px; background: #fff; font-size: 26px; border-radius: 2px; align-items: center; text-align: center; display: flex; justify-content: center; font-weight: bold; color: #ddd; cursor: pointer; width: 300px; height: 70px; user-select: none; }
+
+/*# sourceMappingURL=maps/reactMotion.css.map */

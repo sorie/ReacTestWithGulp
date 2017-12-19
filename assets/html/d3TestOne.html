@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <style media="screen">
+      body{background-color: #282c34}
+    </style>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+      var canvas = d3.select("body").append("svg")
+          .attr("width", 600)
+          .attr("height", 600)
+          .append("g")
+          .attr("transform","translate(50,50)");
+
+      // canvas.append("rect")
+      //       .attr("width","100%")
+      //       .attr("height","100%")
+      //       .attr("fill","#282c34");
+
+      var tree = d3.layout.tree()
+      .size([500,500]);
+
+      d3.json("mydata.json",function(data){
+
+        var nodes = tree.nodes(data);
+        var links = tree.links(nodes);
+
+        var node = canvas.selectAll(".node")
+            .data(nodes)
+            .enter()
+            .append("g")
+                .attr("class","node")
+                .attr("transform", function(d){return "translate("+ d.y + "," + d.x +")";})//circle turn left fn
+
+        node.append("circle")
+            .attr("r",5)
+            .attr("fill","hotpink");
+
+        node.append("text")
+            .text(function(d){return d.name;})
+            .attr("dy", 3)
+            .attr("y", (d) => d.children ? -20 : 20 )
+            .attr("fill","#ddd")
+            .attr("font-weight","bold")
+
+        var diagonal = d3.svg.diagonal()
+            .projection(function(d){return[d.y,d.x];}); //diagonal turn fn
+
+        canvas.selectAll(".link")
+              .data(links)
+              .enter()
+              .append("path")
+              .attr("class","link")
+              .attr("fill","none")
+              .attr("stroke","#adadad")
+              .attr("d",diagonal);
+      })
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["test.js"],"names":["sum","a","b","console","log"],"mappings":";;AAAA;AACA,IAAIA,MAAM,SAANA,GAAM,CAACC,CAAD,EAAIC,CAAJ;AAAA,SAAUD,IAAIC,CAAd;AAAA,CAAV;;AAEAC,QAAQC,GAAR,CAAYJ,IAAI,CAAJ,EAAO,CAAP,CAAZ","file":"../test.js","sourcesContent":["// src/lib.js\r\nlet sum = (a, b) => a + b;\r\n\r\nconsole.log(sum(3, 4));\r\n"]}

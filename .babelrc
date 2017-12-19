@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    ["transform-react-jsx"]
+  ],
+  "ignore":[
+    "assets/*"
+  ],
+  "presets":[
+    "es2015",
+    "react"
+  ]
+}
